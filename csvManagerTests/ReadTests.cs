@@ -10,8 +10,9 @@ namespace csvManager.Tests
         public void getRecordsTest()
         {
             var _filename = "/Users//keith//OneDrive//Documents//csvData//test.csv";
-            var records = Read.getRecords<Foo>(_filename);
-            Debug.Write(records.ToString());
+            var _records = Read.getRecords<Foo>(_filename);
+            Assert.AreEqual(2, _records.Count);
+            //Debug.Write(_records.ToString());
         }
 
         public class Foo

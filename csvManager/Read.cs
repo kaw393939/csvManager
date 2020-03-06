@@ -12,13 +12,13 @@ namespace csvManager
         {
             IList<T> _records = new List<T>();
 
-            using (var reader = new StreamReader(_filename))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            using (var _reader = new StreamReader(_filename))
+            using (var _csv = new CsvReader(_reader, CultureInfo.InvariantCulture))
             {
-                while (csv.Read())
+                while (_csv.Read())
 
                 {
-                    _records.Add(csv.GetRecord<T>());
+                    _records.Add(_csv.GetRecord<T>());
 
                 }
             }
